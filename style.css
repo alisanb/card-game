@@ -1,0 +1,151 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+}
+
+.game-container {
+    text-align: center;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 150px);
+    grid-gap: 20px;
+    margin: 20px auto;
+}
+
+.card {
+    width: 150px;
+    height: 250px;
+    background-color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+}
+
+.card.flipped {
+    background-color: #fff;
+}
+
+.card::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #fff; /* Added background color to hide the image */
+    transition: opacity 0.6s; /* Added transition property */
+    opacity: 0; /* Initially hide the image */
+}
+
+.card.flipped::after {
+    opacity: 1; /* Reveal the image when card is flipped */ 
+}
+
+
+.score-container {
+    margin-top: 20px;
+}
+
+.card[data-card="Max Verstappen"].card::after {
+    background-image: url('images/verstappen.avif');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.card[data-card="Carlos Sainz Jr."]::after {
+    background-image: url('images/sainz.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.card[data-card="Jose Mourinho"]::after{
+    background-image: url('images/mourinho.avif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 20%;
+}
+.card[data-card="Arda Güler"]::after{
+    background-image: url('images/guler.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.card[data-card="Cilian Murphy"]::after{
+    background-image: url('images/murphy.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.card[data-card="David Goggins"]::after{
+    background-image: url('images/goggins.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50%;
+}
+
+
+@media screen and (max-width: 630px) {
+
+    .card-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 120px);
+        column-gap: 50px;
+        row-gap: 20px;
+        margin: 20px auto;
+    }
+    
+    .card {
+        width: 150px;
+        height: 200px;
+        background-color: #fff;
+        border-radius: 10px;
+        cursor: pointer;
+        position: relative;
+    }
+
+}
+
+@media screen and (max-width: 420px) {
+
+    .card-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 140px);
+        column-gap: 20px;
+        row-gap: 10px;
+        margin: 20px auto;
+    }
+    
+    .card {
+        width: 140px;
+        height: 180px;
+        background-color: #fff;
+        border-radius: 10px;
+        cursor: pointer;
+        position: relative;
+    }
+
+}
+
+.message-overlay {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 1000;
+}
+
+#win-message p {
+    margin: 0;
+    font-size: 24px;
+}

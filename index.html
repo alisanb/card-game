@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="game-container">
+        <h1 id="game-header"></h1>
+ 
+        <div class="card-grid">
+            <div class="card" data-card="Max Verstappen"></div>
+            <div class="card" data-card="Carlos Sainz Jr."></div>
+            <div class="card" data-card="Jose Mourinho"></div>
+            <div class="card" data-card="Arda Güler"></div>
+            <div class="card" data-card="Cilian Murphy"></div>
+            <div class="card" data-card="David Goggins"></div>
+        </div>
+        <div class="score-container">
+            <p>Score: <span id="score">0</span></p>
+        </div>
+        
+        <div id="win-message" class="message-overlay">
+            <p>Congratulations! You won!</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
